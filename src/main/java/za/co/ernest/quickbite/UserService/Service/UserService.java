@@ -17,6 +17,7 @@ public class UserService {
 
     public String createUser(UserDTO userDTO) {
         log.info("Creating user {}", userDTO);
+        log.info("Creating user {}", userDTO);
         User user = User.createUser(userDTO.username(), userDTO.password(),
                 userDTO.email(), userDTO.firstName(), userDTO.lastName());
         userRepository.save(user);
