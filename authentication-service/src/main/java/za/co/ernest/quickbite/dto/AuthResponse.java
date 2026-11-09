@@ -1,4 +1,8 @@
-package za.co.ernest.quickbite.DTO;
+package za.co.ernest.quickbite.dto;
 
-public record AuthResponse() {
-}
+public record AuthResponse(
+        String token,
+        String tokenType,
+        String email,
+        String role
+) {}

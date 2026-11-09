@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # 1. This starts our fake AWS cloud (LocalStack)
+  localstack:
+    container_name: quickbite-aws-local
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"            # The main gate to talk to all fake AWS services
+    environment:
+      - SERVICES=s3,rds,sqs    # Tell LocalStack which toys we want to play with
+    volumes:
+      - "./localstack:/var/lib/localstack" # Saves your fake data on your laptop hard drive
+
+  # 2. This builds and runs your Java 21 QuickBite Lambda function
+  quickbite-lambda:
+    container_name: quickbite-user-service
+    build:
+      context: .
+      dockerfile: Dockerfile   # Uses the Dockerfile we just made!
+    ports:
+      - "9000:8080"            # Allows your laptop to send requests to the Lambda
+    environment:
+      - AWS_ENDPOINT_URL=http://localstack:4566 # Tells Java to talk to fake AWS, not real Amazon!
+    depends_on:
+      - localstack             # Wait for the fake cloud to boot up before starting the code
