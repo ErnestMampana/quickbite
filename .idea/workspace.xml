@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="32695414-b694-4719-bbfa-0011fd9d2b6e" name="Changes" comment="Adding registration using Factory and Strategy pattern.">
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/AdminRegistration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/OwnerRegistration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/util/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/user-service-ci.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/DTO/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Entity/DriverDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Enum/AccountStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Enum/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Factory/RegistrationFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Factory/RegistrationStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Repository/DriverDetailsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Repository/UserAccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Strategy/CustomerRegistration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Strategy/DriverRegistration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/util/PasswordGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/QuickbiteApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/za/co/ernest/quickbite/QuickbiteApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="134" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Dockerfile" />
+        <option value="Enum" />
+        <option value="OpenAPI" />
+        <option value="Interface" />
+        <option value="Exception" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ErnestMampana&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ErnestMampana/quickbite.git&quot;,
+    &quot;accountId&quot;: &quot;6ccc15d9-b43f-4a6b-9ad9-442aef3988ca&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;ErnestMampana&quot;,
+    &quot;repository&quot;: &quot;quickbite&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="6.300596936338836E-174" />
+      <entry key="S2" value="5.055441625852866E-44" />
+      <entry key="S5" value="5.5144823855726884E-18" />
+      <entry key="S10" value="3.0446183694333947E-9" />
+      <entry key="S30" value="0.0025611159125195743" />
+      <entry key="S60" value="0.10524402238298826" />
+      <entry key="M2" value="0.8300251756492797" />
+      <entry key="M5" value="3.252259483908332" />
+      <entry key="M10" value="5.361831938304352" />
+      <entry key="M15" value="6.708810543994996" />
+      <entry key="M30" value="12.006234468658432" />
+      <entry key="H1" value="24.513183871847918" />
+      <entry key="H2" value="41.186726178679606" />
+      <entry key="H4" value="55.810498560367826" />
+      <entry key="D1" value="79.15545285903475" />
+      <entry key="W1" value="198.67694342953786" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000007730663383" />
+      <entry key="S60" value="1.0008936791659537" />
+      <entry key="M2" value="1.0334654472322364" />
+      <entry key="M5" value="1.3526018614765412" />
+      <entry key="M10" value="1.8268715108446631" />
+      <entry key="M15" value="2.1468364350488223" />
+      <entry key="M30" value="3.108115124879725" />
+      <entry key="H1" value="5.490239310043283" />
+      <entry key="H2" value="9.238853754205604" />
+      <entry key="H4" value="12.919778191314505" />
+      <entry key="D1" value="23.519992813803526" />
+      <entry key="W1" value="102.59495654239633" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="5.393452371298158E-11" />
+      <entry key="MS500" value="0.008838394240983597" />
+      <entry key="S2" value="0.3066149612491096" />
+      <entry key="S5" value="0.6232141953162955" />
+      <entry key="S10" value="0.7894391680917361" />
+      <entry key="S30" value="0.9267752908322906" />
+      <entry key="S60" value="1.0673703090710258" />
+      <entry key="M2" value="1.8423019593901107" />
+      <entry key="M5" value="4.591289618227825" />
+      <entry key="M10" value="7.1785969367384705" />
+      <entry key="M15" value="8.847574169916363" />
+      <entry key="M30" value="15.10869625659183" />
+      <entry key="H1" value="29.998482762430783" />
+      <entry key="H2" value="50.42122202007926" />
+      <entry key="H4" value="68.72710829038022" />
+      <entry key="D1" value="102.67459113363647" />
+      <entry key="W1" value="301.2714739592147" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3I3crDIpEhsMqHiQSEtVS17oegs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CartApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QuickbiteApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CartApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrderAndOperationsServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.QuickbiteApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.RestaurantServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev__ernest&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/a909097/Dev/quickbite&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="za.co.ernest.quickbite.UserService.Repository" />
+      <recent name="za.co.ernest.quickbite.UserService.Entity" />
+      <recent name="za.co.ernest.quickbite.UserService.Service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\a909097\Dev\quickbite" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\a909097\Dev\quickbite\src\main\java\za\co\ernest\quickbite\UserService" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="za.co.ernest.quickbite.AuthenticationService.DTO" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RestaurantServiceApplication">
+    <configuration name="CartApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="za.co.ernest.quickbite.cart.CartApplication" />
+      <module name="cart" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.co.ernest.quickbite.cart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuickbiteApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="za.co.ernest.quickbite.QuickbiteApplication" />
+      <module name="quickbite" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.co.ernest.quickbite.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="cart" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="za.co.ernest.quickbite.cart.CartApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.co.ernest.quickbite.cart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderAndOperationsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="order-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="za.co.ernest.quickbite.order_and_operations_service.OrderAndOperationsServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.co.ernest.quickbite.order_and_operations_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestaurantServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="restaurant-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="za.co.ernest.quickbite.restaurant_service.RestaurantServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.co.ernest.quickbite.restaurant_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.RestaurantServiceApplication" />
+        <item itemvalue="Spring Boot.OrderAndOperationsServiceApplication" />
+        <item itemvalue="Spring Boot.CartApplication" />
+        <item itemvalue="Application.CartApplication" />
+        <item itemvalue="Application.QuickbiteApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="32695414-b694-4719-bbfa-0011fd9d2b6e" name="Changes" comment="" />
+      <created>1786996888861</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786996888861</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Testing with a logger">
+      <option name="closed" value="true" />
+      <created>1787080313716</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1787080313716</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Adding registration using Factory and Strategy pattern.">
+      <option name="closed" value="true" />
+      <created>1787688144008</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1787688144008</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Testing with a logger" />
+    <MESSAGE value="Adding registration using Factory and Strategy pattern." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding registration using Factory and Strategy pattern." />
+  </component>
+</project>
