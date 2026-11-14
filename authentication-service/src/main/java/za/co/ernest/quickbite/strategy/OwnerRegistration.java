@@ -22,7 +22,7 @@ public class OwnerRegistration implements RegistrationStrategy {
         validate(dto);
         log.info("Provisioning restaurant establishment owner authentication access for: [{}]", dto.email());
 
-        User user = User.createUser(
+        User user = User.createPendingUser(
                 dto.username(),
                 passwordEncoder.encode(dto.password()),
                 dto.email(),

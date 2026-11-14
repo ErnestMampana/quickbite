@@ -6,20 +6,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import za.co.ernest.quickbite.dto.AuthResponse;
-import za.co.ernest.quickbite.dto.LoginRequest;
-import za.co.ernest.quickbite.dto.UserDTO;
-import za.co.ernest.quickbite.dto.UserResponseDTO;
+import org.springframework.web.bind.annotation.*;
+import za.co.ernest.quickbite.dto.*;
 import za.co.ernest.quickbite.service.AuthenticationService;
 
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/auth")
 @Slf4j
 public class AuthenticationController {
 
@@ -27,9 +21,9 @@ public class AuthenticationController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<UserResponseDTO> registerAccount(@Valid @RequestBody UserDTO registrationPayload) {
+    public ResponseEntity<AuthResponse> registerAccount(@Valid @RequestBody UserDTO registrationPayload) {
         log.info("Intercepted inbound REST request parameter mapping for user account registration.");
-        UserResponseDTO profileResponse = authenticationService.createUserAccount(registrationPayload);
+        AuthResponse profileResponse = authenticationService.createUserAccount(registrationPayload);
         return ResponseEntity.status(HttpStatus.CREATED).body(profileResponse);
     }
 
@@ -39,29 +33,23 @@ public class AuthenticationController {
         AuthResponse tokenPayload = authenticationService.authenticateCredentials(loginPayload);
         return ResponseEntity.ok(tokenPayload);
     }
-//
-//    @PostMapping("/login")
-//    public ResponseEntity<UserResponseDTO> authenticate(@RequestBody CredentialsDTO request) {
-//        return ResponseEntity.ok(authenticationService.authenticate(request));
-//    }
-//
-//    @PostMapping("/confirm-email")
-//    public ResponseEntity<UserResponseDTO> confirmEmail(@RequestBody ConfirmEmailRequest request) {
-//        return ResponseEntity.ok(authenticationService.confirmEmail(request));
-//    }
-//
-//    @PostMapping("/password-reset/request")
-//    public ResponseEntity<String> requestPasswordReset(@RequestBody PasswordResetRequest request) {
-//        return ResponseEntity.ok(authenticationService.requestPasswordReset(request.getEmail()));
-//    }
-//
-//    @PutMapping("/reset-password")
-//    public ResponseEntity<UserResponseDTO> resetPassword(@RequestBody ResetPasswordRequest request) {
-//        return ResponseEntity.ok(authenticationService.resetPassword(request));
-//    }
-//
-//    @PutMapping("/refresh-otp")
-//    public ResponseEntity<String> refreshOtp(@RequestBody PasswordResetRequest request) {
-//        return ResponseEntity.ok(authenticationService.refreshOtp(request.getEmail()));
-//    }
+    @PostMapping("/confirm-email")
+    public ResponseEntity<AuthResponse> confirmEmail(@Valid @RequestBody ConfirmEmailRequest request) {
+        return ResponseEntity.ok(authenticationService.confirmEmail(request));
+    }
+
+    @PostMapping("/password-reset/request")
+    public ResponseEntity<String> requestPasswordReset(@Valid @RequestBody PasswordResetRequest request) {
+        return ResponseEntity.ok(authenticationService.requestPasswordReset(request.email()));
+    }
+
+    @PutMapping("/reset-password")
+    public ResponseEntity<AuthResponse> resetPassword(@Valid @RequestBody ResetPasswordRequest request) {
+        return ResponseEntity.ok(authenticationService.resetPassword(request));
+    }
+
+    @PutMapping("/refresh-otp")
+    public ResponseEntity<String> refreshOtp(@Valid @RequestBody PasswordResetRequest request) {
+        return ResponseEntity.ok(authenticationService.refreshOtp(request.email()));
+    }
 }
