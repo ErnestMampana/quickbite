@@ -5,36 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32695414-b694-4719-bbfa-0011fd9d2b6e" name="Changes" comment="Adding registration using Factory and Strategy pattern.">
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/AuthResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/AdminRegistration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/OwnerRegistration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/util/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/user-service-ci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/DTO/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Entity/DriverDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Enum/AccountStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Enum/UserRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Factory/RegistrationFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Factory/RegistrationStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Repository/DriverDetailsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Repository/UserAccountRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Strategy/CustomerRegistration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/Strategy/DriverRegistration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/AuthenticationService/util/PasswordGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/za/co/ernest/quickbite/QuickbiteApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/za/co/ernest/quickbite/QuickbiteApplicationTests.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/ConfirmEmailRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/PasswordResetRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/ResetPasswordRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/entity/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/kafka/event/OtpNotificationEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/kafka/port/NotificationPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/kafka/port/TokenGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/kafka/producer/KafkaNotificationPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/kafka/producer/NotificationEventProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/repository/TokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/util/OtpGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/QuickbiteApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/AuthenticationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/AuthResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/dto/UserResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/AdminRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/AdminRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/CustomerRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/CustomerRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/DriverRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/DriverRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/OwnerRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/OwnerRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/util/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/util/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +48,10 @@
         <option value="Dockerfile" />
         <option value="Enum" />
         <option value="OpenAPI" />
-        <option value="Interface" />
         <option value="Exception" />
         <option value="Record" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -96,61 +93,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="6.300596936338836E-174" />
-      <entry key="S2" value="5.055441625852866E-44" />
-      <entry key="S5" value="5.5144823855726884E-18" />
-      <entry key="S10" value="3.0446183694333947E-9" />
-      <entry key="S30" value="0.0025611159125195743" />
-      <entry key="S60" value="0.10524402238298826" />
-      <entry key="M2" value="0.8300251756492797" />
-      <entry key="M5" value="3.252259483908332" />
-      <entry key="M10" value="5.361831938304352" />
-      <entry key="M15" value="6.708810543994996" />
-      <entry key="M30" value="12.006234468658432" />
-      <entry key="H1" value="24.513183871847918" />
-      <entry key="H2" value="41.186726178679606" />
-      <entry key="H4" value="55.810498560367826" />
-      <entry key="D1" value="79.15545285903475" />
-      <entry key="W1" value="198.67694342953786" />
+      <entry key="MS100" value="1.001667508003253" />
+      <entry key="MS500" value="1.5725160522138821" />
+      <entry key="S2" value="5.656112187621163" />
+      <entry key="S5" value="10.093742370977472" />
+      <entry key="S10" value="12.618775638798773" />
+      <entry key="S30" value="14.851743197386744" />
+      <entry key="S60" value="16.683148925273667" />
+      <entry key="M2" value="20.69776054293342" />
+      <entry key="M5" value="27.60757385439647" />
+      <entry key="M10" value="32.990215559669835" />
+      <entry key="M15" value="36.51392885061757" />
+      <entry key="M30" value="43.906015046998284" />
+      <entry key="H1" value="53.22660133598563" />
+      <entry key="H2" value="62.68003261968702" />
+      <entry key="H4" value="69.95853784763968" />
+      <entry key="D1" value="78.82723713417266" />
+      <entry key="W1" value="181.66280159994116" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0000007730663383" />
-      <entry key="S60" value="1.0008936791659537" />
-      <entry key="M2" value="1.0334654472322364" />
-      <entry key="M5" value="1.3526018614765412" />
-      <entry key="M10" value="1.8268715108446631" />
-      <entry key="M15" value="2.1468364350488223" />
-      <entry key="M30" value="3.108115124879725" />
-      <entry key="H1" value="5.490239310043283" />
-      <entry key="H2" value="9.238853754205604" />
-      <entry key="H4" value="12.919778191314505" />
-      <entry key="D1" value="23.519992813803526" />
-      <entry key="W1" value="102.59495654239633" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.3256586509524737E-178" />
+      <entry key="S5" value="9.497979233157668E-72" />
+      <entry key="S10" value="4.618611268964156E-36" />
+      <entry key="S30" value="3.2967056111771608E-12" />
+      <entry key="S60" value="3.121832740145789E-6" />
+      <entry key="M2" value="0.0030642060625844262" />
+      <entry key="M5" value="0.20679294684033508" />
+      <entry key="M10" value="0.970118937300786" />
+      <entry key="M15" value="1.7096672743219599" />
+      <entry key="M30" value="3.1312134352380743" />
+      <entry key="H1" value="4.308609563345701" />
+      <entry key="H2" value="5.07671962703346" />
+      <entry key="H4" value="5.516972241102189" />
+      <entry key="D1" value="6.136581646839275" />
+      <entry key="W1" value="58.630340777248435" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="5.393452371298158E-11" />
-      <entry key="MS500" value="0.008838394240983597" />
-      <entry key="S2" value="0.3066149612491096" />
-      <entry key="S5" value="0.6232141953162955" />
-      <entry key="S10" value="0.7894391680917361" />
-      <entry key="S30" value="0.9267752908322906" />
-      <entry key="S60" value="1.0673703090710258" />
-      <entry key="M2" value="1.8423019593901107" />
-      <entry key="M5" value="4.591289618227825" />
-      <entry key="M10" value="7.1785969367384705" />
-      <entry key="M15" value="8.847574169916363" />
-      <entry key="M30" value="15.10869625659183" />
-      <entry key="H1" value="29.998482762430783" />
-      <entry key="H2" value="50.42122202007926" />
-      <entry key="H4" value="68.72710829038022" />
-      <entry key="D1" value="102.67459113363647" />
-      <entry key="W1" value="301.2714739592147" />
+      <entry key="MS100" value="0.9810422078919407" />
+      <entry key="MS500" value="1.5652861872652344" />
+      <entry key="S2" value="5.6489416787673425" />
+      <entry key="S5" value="10.088493781756787" />
+      <entry key="S10" value="12.615467689986733" />
+      <entry key="S30" value="14.850432586915455" />
+      <entry key="S60" value="16.682375500632517" />
+      <entry key="M2" value="20.700115725036312" />
+      <entry key="M5" value="27.810492274565586" />
+      <entry key="M10" value="33.952235157682836" />
+      <entry key="M15" value="38.21392249597798" />
+      <entry key="M30" value="47.02758388626792" />
+      <entry key="H1" value="57.52794767744107" />
+      <entry key="H2" value="67.7521764421645" />
+      <entry key="H4" value="75.47291811038275" />
+      <entry key="D1" value="84.96332864825281" />
+      <entry key="W1" value="240.29285356014137" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -165,45 +162,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CartApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.QuickbiteApplication.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.CartApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.OrderAndOperationsServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.QuickbiteApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestaurantServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev__ernest&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/a909097/Dev/quickbite&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AuthenticationServiceApplication.executor": "Run",
+    "Application.CartApplication.executor": "Run",
+    "Application.QuickbiteApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.CartApplication.executor": "Run",
+    "Spring Boot.OrderAndOperationsServiceApplication.executor": "Run",
+    "Spring Boot.QuickbiteApplication.executor": "Run",
+    "Spring Boot.RestaurantServiceApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "dev__ernest",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/a909097/Dev/quickbite",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "to.speed.mode.migration.done": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="za.co.ernest.quickbite.UserService.Repository" />
@@ -223,13 +221,13 @@
       <recent name="za.co.ernest.quickbite.AuthenticationService.DTO" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.RestaurantServiceApplication">
-    <configuration name="CartApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="za.co.ernest.quickbite.cart.CartApplication" />
-      <module name="cart" />
+  <component name="RunManager" selected="Application.AuthenticationServiceApplication">
+    <configuration name="AuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="za.co.ernest.quickbite.AuthenticationServiceApplication" />
+      <module name="quickbite" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.co.ernest.quickbite.cart.*" />
+          <option name="PATTERN" value="za.co.ernest.quickbite.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -294,11 +292,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AuthenticationServiceApplication" />
+        <item itemvalue="Application.QuickbiteApplication" />
         <item itemvalue="Spring Boot.RestaurantServiceApplication" />
         <item itemvalue="Spring Boot.OrderAndOperationsServiceApplication" />
         <item itemvalue="Spring Boot.CartApplication" />
-        <item itemvalue="Application.CartApplication" />
-        <item itemvalue="Application.QuickbiteApplication" />
       </list>
     </recent_temporary>
   </component>

@@ -25,7 +25,7 @@ public class CustomerRegistration implements RegistrationStrategy {
         validate(dto);
         log.info("Persisting verified secure customer identity: [{}]", dto.email());
 
-        User user = User.createUser(
+        User user = User.createPendingUser(
                 dto.username(),
                 passwordEncoder.encode(dto.password()),
                 dto.email(),
@@ -48,11 +48,4 @@ public class CustomerRegistration implements RegistrationStrategy {
         return UserRole.CUSTOMER;
     }
 
-
-    private String generateSecureOtp() {
-        SecureRandom random = new SecureRandom();
-        int num = 100000 + random.nextInt(900000);
-        log.info(String.valueOf(num));
-        return String.valueOf(num);
-    }
 }

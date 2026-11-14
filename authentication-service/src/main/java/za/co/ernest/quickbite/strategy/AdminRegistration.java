@@ -23,7 +23,7 @@ public class AdminRegistration implements RegistrationStrategy {
         validate(dto);
         log.info("Elevating platform administrative account clearance: [{}]", dto.email());
 
-        User user = User.createUser(
+        User user = User.createPendingUser(
                 dto.username(),
                 passwordEncoder.encode(dto.password()),
                 dto.email(),
