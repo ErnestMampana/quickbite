@@ -12,7 +12,7 @@ import za.co.ernest.quickbite.restaurant_service.service.RestaurantService;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/restaurant")
+@RequestMapping("api/v1/restaurants")
 public class RestaurantController {
 
     private final RestaurantService restaurantService;
