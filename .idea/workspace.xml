@@ -5,19 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32695414-b694-4719-bbfa-0011fd9d2b6e" name="Changes" comment="Adding registration using Factory and Strategy pattern.">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/za/co/ernest/quickbite/api_gateway/filter/AuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/za/co/ernest/quickbite/api_gateway/filter/RouteValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/za/co/ernest/quickbite/api_gateway/util/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-service/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restaurant-service/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cart/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-service/src/main/java/za/co/ernest/quickbite/restaurant_service/controller/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/src/main/java/za/co/ernest/quickbite/restaurant_service/controller/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/docker-compose.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,13 +36,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Dockerfile" />
         <option value="Enum" />
         <option value="OpenAPI" />
         <option value="Exception" />
         <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -79,61 +84,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0000000000000027" />
-      <entry key="S60" value="1.0000000775813223" />
-      <entry key="M2" value="1.0005683720753062" />
-      <entry key="M5" value="1.1864702144851282" />
-      <entry key="M10" value="2.633697530427586" />
-      <entry key="M15" value="4.565567058507031" />
-      <entry key="M30" value="9.235707934146339" />
-      <entry key="H1" value="16.60524614004396" />
-      <entry key="H2" value="31.8550813731913" />
-      <entry key="H4" value="52.907007410953796" />
-      <entry key="D1" value="89.8480809462521" />
-      <entry key="W1" value="198.6270174129273" />
+      <entry key="MS100" value="1.000003921943004" />
+      <entry key="MS500" value="1.0838656790612833" />
+      <entry key="S2" value="1.7675607854153754" />
+      <entry key="S5" value="2.597472676396677" />
+      <entry key="S10" value="3.465249618722833" />
+      <entry key="S30" value="12.425294655331275" />
+      <entry key="S60" value="25.42349538167964" />
+      <entry key="M2" value="38.23789304035022" />
+      <entry key="M5" value="49.46927779973782" />
+      <entry key="M10" value="54.07786564797073" />
+      <entry key="M15" value="56.04523515393729" />
+      <entry key="M30" value="60.11944175427145" />
+      <entry key="H1" value="67.34122456314248" />
+      <entry key="H2" value="82.28673259485205" />
+      <entry key="H4" value="104.43821349802568" />
+      <entry key="D1" value="146.63139908155057" />
+      <entry key="W1" value="256.9259872127359" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="7.944868147297476E-161" />
-      <entry key="S10" value="8.91339898540253E-81" />
-      <entry key="S30" value="2.073390554205726E-27" />
-      <entry key="S60" value="4.553449850614064E-14" />
-      <entry key="M2" value="2.1338814050021773E-7" />
-      <entry key="M5" value="0.0021461897261801804" />
-      <entry key="M10" value="0.0463270408159265" />
-      <entry key="M15" value="0.12901486044887583" />
-      <entry key="M30" value="0.37109236643410276" />
-      <entry key="H1" value="0.8653613778812325" />
-      <entry key="H2" value="2.035710304681617" />
-      <entry key="H4" value="3.6300564454831084" />
-      <entry key="D1" value="6.4432260242227" />
-      <entry key="W1" value="58.6635037789222" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="5.939577928466276E-173" />
+      <entry key="S30" value="3.90168192378162E-58" />
+      <entry key="S60" value="1.9752675575176186E-29" />
+      <entry key="M2" value="4.444398224189201E-15" />
+      <entry key="M5" value="1.8160390638289687E-6" />
+      <entry key="M10" value="0.0013476065010328414" />
+      <entry key="M15" value="0.01220277944469828" />
+      <entry key="M30" value="0.11412782301906454" />
+      <entry key="H1" value="0.4799016735345461" />
+      <entry key="H2" value="1.51597958584448" />
+      <entry key="H4" value="3.1325792523763116" />
+      <entry key="D1" value="6.286874841742215" />
+      <entry key="W1" value="58.457995509661714" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9592641193252643" />
-      <entry key="MS500" value="0.9917167307382933" />
-      <entry key="S2" value="0.9979227189990506" />
-      <entry key="S5" value="0.999168569213607" />
-      <entry key="S10" value="0.9995841981612189" />
-      <entry key="S30" value="0.9998613801725067" />
-      <entry key="S60" value="0.9999307632178118" />
-      <entry key="M2" value="1.0005284362466897" />
-      <entry key="M5" value="1.1881983359573383" />
-      <entry key="M10" value="2.678705729810448" />
-      <entry key="M15" value="4.692852397148048" />
-      <entry key="M30" value="9.604981810731394" />
-      <entry key="H1" value="17.4688535843029" />
-      <entry key="H2" value="33.888860030201435" />
-      <entry key="H4" value="56.53533279728665" />
-      <entry key="D1" value="96.29079096810504" />
-      <entry key="W1" value="257.29022559101423" />
+      <entry key="MS100" value="0.9330367019209763" />
+      <entry key="MS500" value="1.0691670289522959" />
+      <entry key="S2" value="1.7615966107328649" />
+      <entry key="S5" value="2.593777754511885" />
+      <entry key="S10" value="3.4622475656961966" />
+      <entry key="S30" value="12.419460350955436" />
+      <entry key="S60" value="25.41734020766444" />
+      <entry key="M2" value="38.233271660875104" />
+      <entry key="M5" value="49.46689850429517" />
+      <entry key="M10" value="54.077877939315556" />
+      <entry key="M15" value="56.05638451004706" />
+      <entry key="M30" value="60.232552386703986" />
+      <entry key="H1" value="67.81992127215423" />
+      <entry key="H2" value="83.80115670936242" />
+      <entry key="H4" value="107.56924021743815" />
+      <entry key="D1" value="152.91776062855413" />
+      <entry key="W1" value="315.3836867544254" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -172,7 +177,7 @@
     "git-widget-placeholder": "dev__ernest",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/a909097/Dev/quickbite",
+    "last_opened_file_path": "C:/Users/a909097/Dev/quickbite/api-gateway",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -197,6 +202,10 @@
       <recent name="za.co.ernest.quickbite.UserService.Service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\a909097\Dev\quickbite\api-gateway" />
+      <recent name="C:\Users\a909097\Dev\quickbite\authentication-service" />
+      <recent name="C:\Users\a909097\Dev\quickbite\cart" />
+      <recent name="C:\Users\a909097\Dev\quickbite\order-service" />
       <recent name="C:\Users\a909097\Dev\quickbite" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
