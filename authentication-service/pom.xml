@@ -8,8 +8,8 @@
 		<version>3.5.16</version>
 		<relativePath/>
 	</parent>
-	<groupId>za.co.ernest</groupId>
-	<artifactId>quickbite</artifactId>
+	<groupId>za.co.ernest.quickbite</groupId>
+	<artifactId>authentication-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
