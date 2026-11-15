@@ -3,6 +3,7 @@ package za.co.ernest.quickbite.strategy;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import za.co.ernest.quickbite.Exception.DuplicateEmailException;
 import za.co.ernest.quickbite.dto.UserDTO;
 import za.co.ernest.quickbite.entity.User;
 import za.co.ernest.quickbite.enums.UserRole;
@@ -36,7 +37,7 @@ public class DriverRegistration implements RegistrationStrategy {
     @Override
     public void validate(UserDTO dto) {
         if (userAccountRepository.findByEmail(dto.email()).isPresent()) {
-            throw new IllegalArgumentException("Driver onboarding failed: Email already exists.");
+            throw new DuplicateEmailException("Driver onboarding failed: Email already exists.");
         }
     }
 

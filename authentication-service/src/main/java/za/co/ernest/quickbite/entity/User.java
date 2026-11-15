@@ -3,6 +3,10 @@ package za.co.ernest.quickbite.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
+import za.co.ernest.quickbite.Exception.AccountNotReadyException;
+import za.co.ernest.quickbite.Exception.AccountStateConflictException;
+import za.co.ernest.quickbite.Exception.ExpiredOtpException;
+import za.co.ernest.quickbite.Exception.InvalidOtpException;
 import za.co.ernest.quickbite.enums.AccountStatus;
 import za.co.ernest.quickbite.enums.UserRole;
 
@@ -75,7 +79,7 @@ public class User {
 
     public void confirmEmail(String inputOtp) {
         if (this.status == AccountStatus.ACTIVE) {
-            throw new IllegalStateException("Account is already confirmed and active.");
+            throw new AccountStateConflictException("Account is already confirmed and active.");
         }
         validateOtp(inputOtp);
         this.status = AccountStatus.ACTIVE;
@@ -89,7 +93,7 @@ public class User {
 
     public void resetPassword(String inputOtp, String newEncodedPassword) {
         if (this.status != AccountStatus.AWAITING_PWD_RESET) {
-            throw new IllegalStateException("No active password reset request found for this account.");
+            throw new AccountStateConflictException("No active password reset request found for this account.");
         }
         validateOtp(inputOtp);
         this.password = newEncodedPassword;
@@ -99,23 +103,27 @@ public class User {
 
     public void refreshOtp(String newOtp, int expiryMinutes) {
         if (this.status == AccountStatus.ACTIVE) {
-            throw new IllegalStateException("Active accounts do not require an OTP refresh.");
+            throw new AccountStateConflictException("Active accounts do not require an OTP refresh.");
         }
         assignOtp(newOtp, expiryMinutes);
     }
 
     public void ensureIsHealthy() {
         if (this.status == AccountStatus.AWAITING_PWD_RESET) {
-            throw new IllegalStateException("Login blocked: Password reset is pending. Complete the reset flow first.");
+            throw new AccountNotReadyException("Login blocked: Password reset is pending. Complete the reset flow first.");
+        }
+
+        if(this.status == AccountStatus.AWAITING_CONFIRMATION) {
+            throw new AccountNotReadyException("Login blocked: account is not confirmed.");
         }
     }
 
     private void validateOtp(String inputOtp) {
         if (this.otpCode == null || !this.otpCode.equals(inputOtp)) {
-            throw new IllegalArgumentException("Invalid OTP code provided.");
+            throw new InvalidOtpException("Invalid OTP code provided.");
         }
         if (this.otpExpiresAt == null || LocalDateTime.now().isAfter(this.otpExpiresAt)) {
-            throw new IllegalArgumentException("OTP has expired. Please request a new token.");
+            throw new ExpiredOtpException("OTP has expired. Please request a new token.");
         }
     }
 

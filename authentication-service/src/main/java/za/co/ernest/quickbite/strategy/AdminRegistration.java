@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import za.co.ernest.quickbite.Exception.DuplicateEmailException;
 import za.co.ernest.quickbite.Factory.RegistrationStrategy;
 import za.co.ernest.quickbite.dto.UserDTO;
 import za.co.ernest.quickbite.entity.User;
@@ -37,7 +38,7 @@ public class AdminRegistration implements RegistrationStrategy {
     @Override
     public void validate(UserDTO dto) {
         if (userAccountRepository.findByEmail(dto.email()).isPresent()) {
-            throw new IllegalArgumentException("Administrative system assignment denied: Record conflict.");
+            throw new DuplicateEmailException("Administrative system assignment denied: Record conflict.");
         }
     }
 
