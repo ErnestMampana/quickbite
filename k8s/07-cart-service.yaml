@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cart-service
+  template:
+    metadata:
+      labels:
+        app: cart-service
+    spec:
+      containers:
+        - name: cart-service
+          image: quickbite/cart-service:1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8083
+          env:
+            - name: SERVER_PORT
+              value: "8083"
+            - name: APP_SERVICES_ORDER_URL
+              value: http://order-service:8084
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-service
+spec:
+  type: ClusterIP
+  selector:
+    app: cart-service
+  ports:
+    - port: 8083
+      targetPort: 8083
