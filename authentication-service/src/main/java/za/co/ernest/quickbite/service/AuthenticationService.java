@@ -2,6 +2,8 @@ package za.co.ernest.quickbite.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -146,6 +148,12 @@ public class AuthenticationService {
         ));
 
         return "New OTP generated and dispatched. Valid for 5 minutes.";
+    }
+
+    @Transactional
+    public User loadUserByUsername(String email) throws UsernameNotFoundException {
+        return userAccountRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalArgumentException("User account not found for email: " + email));
     }
 
     private User getUserByEmail(String email) {
