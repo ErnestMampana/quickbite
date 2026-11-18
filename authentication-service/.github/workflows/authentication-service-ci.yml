@@ -3,14 +3,14 @@ name: Authentication Service CI
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'authentication-service/**'
       - '.github/workflows/authentication-service-ci.yml'
 
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - 'authentication-service/**'
       - '.github/workflows/authentication-service-ci.yml'
