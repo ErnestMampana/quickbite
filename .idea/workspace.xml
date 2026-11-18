@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32695414-b694-4719-bbfa-0011fd9d2b6e" name="Changes" comment="Adding registration using Factory and Strategy pattern.">
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/AccountNotReadyException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/AccountStateConflictException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/DuplicateEmailException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/ExpiredOtpException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/InvalidOtpException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/UnsupportedRegistrationRoleException.java" afterDir="false" />
+    <list default="true" id="32695414-b694-4719-bbfa-0011fd9d2b6e" name="Changes" comment="Updating CI on authentication">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Factory/RegistrationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Factory/RegistrationFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/service/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/AdminRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/AdminRegistration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/CustomerRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/CustomerRegistration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/DriverRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/DriverRegistration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/OwnerRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/OwnerRegistration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="134" />
+    <option name="cachedIndexableFilesCount" value="177" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,9 +24,9 @@
         <option value="OpenAPI" />
         <option value="Record" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Dockerfile" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -81,61 +68,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="6.696915033998473E-7" />
-      <entry key="MS500" value="0.058242372254129" />
-      <entry key="S2" value="0.5453860724822611" />
-      <entry key="S5" value="1.064031704500746" />
-      <entry key="S10" value="1.431507203905401" />
-      <entry key="S30" value="1.9580131469069466" />
-      <entry key="S60" value="2.3093641844734667" />
-      <entry key="M2" value="2.59330965786992" />
-      <entry key="M5" value="2.952986348664036" />
-      <entry key="M10" value="6.198901509429548" />
-      <entry key="M15" value="13.81350966578665" />
-      <entry key="M30" value="41.12088287821623" />
-      <entry key="H1" value="76.05645642520219" />
-      <entry key="H2" value="105.15111100065343" />
-      <entry key="H4" value="132.35013933327323" />
-      <entry key="D1" value="267.82698232071994" />
-      <entry key="W1" value="439.03633720886995" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0000000000000218" />
+      <entry key="S10" value="1.0000007951408616" />
+      <entry key="S30" value="1.102919768517422" />
+      <entry key="S60" value="3.015540563559356" />
+      <entry key="M2" value="10.222166537552328" />
+      <entry key="M5" value="32.52809401635756" />
+      <entry key="M10" value="66.5091709610157" />
+      <entry key="M15" value="91.38033306018568" />
+      <entry key="M30" value="135.40515721147466" />
+      <entry key="H1" value="174.19438033786358" />
+      <entry key="H2" value="203.19307301277004" />
+      <entry key="H4" value="225.28733307088692" />
+      <entry key="D1" value="393.83504334064025" />
+      <entry key="W1" value="709.5991092932011" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.000000000000067" />
-      <entry key="S2" value="1.0005090164847856" />
-      <entry key="S5" value="1.0481608995903677" />
-      <entry key="S10" value="1.219913363478535" />
-      <entry key="S30" value="1.6968801906018898" />
-      <entry key="S60" value="2.183754567828034" />
-      <entry key="M2" value="2.7682270993348816" />
-      <entry key="M5" value="3.398608361174036" />
-      <entry key="M10" value="3.8633809682816085" />
-      <entry key="M15" value="4.304876894120534" />
-      <entry key="M30" value="5.341032325139414" />
-      <entry key="H1" value="6.355360039139622" />
-      <entry key="H2" value="7.0817324161233435" />
-      <entry key="H4" value="7.66811690094832" />
-      <entry key="D1" value="11.733029547766677" />
-      <entry key="W1" value="62.42713303202761" />
+      <entry key="MS100" value="3.075072574376482E-47" />
+      <entry key="MS500" value="4.998654008356387E-10" />
+      <entry key="S2" value="0.005826641969716685" />
+      <entry key="S5" value="0.18301316913548885" />
+      <entry key="S10" value="0.5987756479979253" />
+      <entry key="S30" value="1.3348229095627957" />
+      <entry key="S60" value="1.6334244331599108" />
+      <entry key="M2" value="1.8073096235420854" />
+      <entry key="M5" value="1.920539971045029" />
+      <entry key="M10" value="1.9598615575289342" />
+      <entry key="M15" value="1.973149434316691" />
+      <entry key="M30" value="1.986528718155962" />
+      <entry key="H1" value="1.9935657117519225" />
+      <entry key="H2" value="2.042834448103297" />
+      <entry key="H4" value="2.595917263310111" />
+      <entry key="D1" value="11.307601956324225" />
+      <entry key="W1" value="63.38494461174021" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.1791385167067668E-4" />
-      <entry key="MS500" value="0.18142868182348382" />
-      <entry key="S2" value="1.0366974451081858" />
-      <entry key="S5" value="1.8026348469968794" />
-      <entry key="S10" value="2.4383290893981107" />
-      <entry key="S30" value="3.51615607074978" />
-      <entry key="S60" value="4.380094205442103" />
-      <entry key="M2" value="5.279844127864885" />
-      <entry key="M5" value="6.307934422053841" />
-      <entry key="M10" value="10.036006848708631" />
-      <entry key="M15" value="18.098363144261445" />
-      <entry key="M30" value="46.4491724063568" />
-      <entry key="H1" value="82.40412546081797" />
-      <entry key="H2" value="112.22851832720512" />
-      <entry key="H4" value="140.0158703988913" />
-      <entry key="D1" value="279.55928773913047" />
-      <entry key="W1" value="501.463134736448" />
+      <entry key="MS100" value="5.088088609483958E-40" />
+      <entry key="MS500" value="1.3868453066465748E-8" />
+      <entry key="S2" value="0.013606385772691883" />
+      <entry key="S5" value="0.3005250626453351" />
+      <entry key="S10" value="0.9231432998463381" />
+      <entry key="S30" value="2.1152687560191508" />
+      <entry key="S60" value="4.4700908842368845" />
+      <entry key="M2" value="11.934234690973037" />
+      <entry key="M5" value="34.407308387290364" />
+      <entry key="M10" value="68.44599521134867" />
+      <entry key="M15" value="93.33695058770019" />
+      <entry key="M30" value="137.3824209935823" />
+      <entry key="H1" value="176.18287276680007" />
+      <entry key="H2" value="205.23314718480592" />
+      <entry key="H4" value="227.88157426048164" />
+      <entry key="D1" value="405.14179093379727" />
+      <entry key="W1" value="772.9836593496532" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -150,48 +137,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AuthenticationServiceApplication.executor": "Run",
-    "Application.CartApplication.executor": "Run",
-    "Application.QuickbiteApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ApiGatewayApplication.executor": "Run",
-    "Spring Boot.CartApplication.executor": "Run",
-    "Spring Boot.OrderAndOperationsServiceApplication.executor": "Run",
-    "Spring Boot.QuickbiteApplication.executor": "Run",
-    "Spring Boot.RestaurantServiceApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "dev__ernest",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/a909097/Dev/quickbite/api-gateway",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AuthenticationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CartApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QuickbiteApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthenticationIntegrationTest.confirmEmail_ShouldReturn400BadRequest_WhenOtpIsInvalid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthenticationIntegrationTest.passwordResetAndRefreshOtpFlow_ShouldUpdatePasswordAndAllowLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthenticationIntegrationTest.register_ShouldReturn409Conflict_WhenEmailAlreadyExists.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CartApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrderAndOperationsServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.QuickbiteApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.RestaurantServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev__ernest&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/a909097/Dev/quickbite/api-gateway&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="za.co.ernest.quickbite.UserService.Repository" />
@@ -215,16 +205,51 @@
       <recent name="za.co.ernest.quickbite.AuthenticationService.DTO" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.RestaurantServiceApplication">
-    <configuration name="AuthenticationServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="za.co.ernest.quickbite.AuthenticationServiceApplication" />
+  <component name="RunManager" selected="JUnit.AuthenticationIntegrationTest.register_ShouldReturn409Conflict_WhenEmailAlreadyExists">
+    <configuration name="AuthenticationIntegrationTest.confirmEmail_ShouldReturn400BadRequest_WhenOtpIsInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="quickbite" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="za.co.ernest.quickbite.*" />
+          <option name="PATTERN" value="za.co.ernest.quickbite.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="za.co.ernest.quickbite.service" />
+      <option name="MAIN_CLASS_NAME" value="za.co.ernest.quickbite.service.AuthenticationIntegrationTest" />
+      <option name="METHOD_NAME" value="confirmEmail_ShouldReturn400BadRequest_WhenOtpIsInvalid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationIntegrationTest.passwordResetAndRefreshOtpFlow_ShouldUpdatePasswordAndAllowLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quickbite" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.co.ernest.quickbite.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="za.co.ernest.quickbite.service" />
+      <option name="MAIN_CLASS_NAME" value="za.co.ernest.quickbite.service.AuthenticationIntegrationTest" />
+      <option name="METHOD_NAME" value="passwordResetAndRefreshOtpFlow_ShouldUpdatePasswordAndAllowLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationIntegrationTest.register_ShouldReturn409Conflict_WhenEmailAlreadyExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quickbite" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.co.ernest.quickbite.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="za.co.ernest.quickbite.service" />
+      <option name="MAIN_CLASS_NAME" value="za.co.ernest.quickbite.service.AuthenticationIntegrationTest" />
+      <option name="METHOD_NAME" value="register_ShouldReturn409Conflict_WhenEmailAlreadyExists" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -236,34 +261,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="za.co.ernest.quickbite.api_gateway.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CartApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="cart" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="za.co.ernest.quickbite.cart.CartApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="za.co.ernest.quickbite.cart.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderAndOperationsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="order-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="za.co.ernest.quickbite.order_and_operations_service.OrderAndOperationsServiceApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="za.co.ernest.quickbite.order_and_operations_service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -287,11 +284,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AuthenticationIntegrationTest.register_ShouldReturn409Conflict_WhenEmailAlreadyExists" />
+        <item itemvalue="JUnit.AuthenticationIntegrationTest.confirmEmail_ShouldReturn400BadRequest_WhenOtpIsInvalid" />
+        <item itemvalue="JUnit.AuthenticationIntegrationTest.passwordResetAndRefreshOtpFlow_ShouldUpdatePasswordAndAllowLogin" />
         <item itemvalue="Spring Boot.RestaurantServiceApplication" />
         <item itemvalue="Spring Boot.ApiGatewayApplication" />
-        <item itemvalue="Spring Boot.CartApplication" />
-        <item itemvalue="Spring Boot.OrderAndOperationsServiceApplication" />
-        <item itemvalue="Application.AuthenticationServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -327,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787688144008</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updating CI on authentication">
+      <option name="closed" value="true" />
+      <created>1794992376385</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1794992376385</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +379,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Testing with a logger" />
     <MESSAGE value="Adding registration using Factory and Strategy pattern." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding registration using Factory and Strategy pattern." />
+    <MESSAGE value="Updating CI on authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating CI on authentication" />
   </component>
 </project>
