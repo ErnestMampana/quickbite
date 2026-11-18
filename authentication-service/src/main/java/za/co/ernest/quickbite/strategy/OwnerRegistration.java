@@ -1,5 +1,6 @@
 package za.co.ernest.quickbite.strategy;
 
+import za.co.ernest.quickbite.Exception.DuplicateEmailException;
 import za.co.ernest.quickbite.Factory.RegistrationStrategy;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +37,7 @@ public class OwnerRegistration implements RegistrationStrategy {
     @Override
     public void validate(UserDTO dto) {
         if (userAccountRepository.findByEmail(dto.email()).isPresent()) {
-            throw new IllegalArgumentException("Establishment owner registration failed: Account conflict.");
+            throw new DuplicateEmailException("Establishment owner registration failed: Account conflict.");
         }
     }
 

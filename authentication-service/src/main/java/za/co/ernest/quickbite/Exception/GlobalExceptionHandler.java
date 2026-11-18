@@ -25,4 +25,53 @@ public class GlobalExceptionHandler{
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
 
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleResourceNotFound(ResourceNotFoundException ex) {
+        return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
+    }
+
+    @ExceptionHandler(AccountStateConflictException.class)
+    public ResponseEntity<ErrorResponse> handleAccountStateConflict(AccountStateConflictException ex) {
+        return buildErrorResponse(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
+    @ExceptionHandler(AccountNotReadyException.class)
+    public ResponseEntity<ErrorResponse> handleAccountNotReady(AccountNotReadyException ex) {
+        return buildErrorResponse(HttpStatus.FORBIDDEN, ex.getMessage());
+    }
+
+    @ExceptionHandler(InvalidOtpException.class)
+    public ResponseEntity<ErrorResponse> handleInvalidOtp(InvalidOtpException ex) {
+        return buildErrorResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+
+    @ExceptionHandler(ExpiredOtpException.class)
+    public ResponseEntity<ErrorResponse> expiredOtpException(ExpiredOtpException ex) {
+        return buildErrorResponse(HttpStatus.GONE, ex.getMessage());
+    }
+
+    @ExceptionHandler(UnsupportedRegistrationRoleException.class)
+    public ResponseEntity<ErrorResponse> handleUnsupportedRegistrationRole(UnsupportedRegistrationRoleException ex) {
+        return buildErrorResponse(
+                HttpStatus.INTERNAL_SERVER_ERROR,
+                "Registration is currently unavailable for the selected role."
+        );
+    }
+
+    @ExceptionHandler(DuplicateEmailException.class)
+    public ResponseEntity<ErrorResponse> handleDuplicateEmail(DuplicateEmailException ex) {
+        return buildErrorResponse(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
+    private ResponseEntity<ErrorResponse> buildErrorResponse(HttpStatus status, String message) {
+        ErrorResponse response = ErrorResponse.builder()
+                .timestamp(LocalDateTime.now())
+                .status(status.value())
+                .error(status.getReasonPhrase())
+                .message(message)
+                .build();
+
+        return ResponseEntity.status(status).body(response);
+    }
+
 }

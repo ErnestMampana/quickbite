@@ -1,6 +1,7 @@
 package za.co.ernest.quickbite.Factory;
 
 import org.springframework.stereotype.Component;
+import za.co.ernest.quickbite.Exception.UnsupportedRegistrationRoleException;
 import za.co.ernest.quickbite.enums.UserRole;
 
 import java.util.EnumMap;
@@ -26,7 +27,7 @@ public class RegistrationFactory {
     public RegistrationStrategy getStrategy(UserRole role) {
         RegistrationStrategy strategy = strategies.get(role);
         if (strategy == null) {
-            throw new IllegalArgumentException("System error: No registration strategy configured for role: " + role);
+            throw new UnsupportedRegistrationRoleException("System error: No registration strategy configured for role: " + role);
         }
         return strategy;
     }

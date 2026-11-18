@@ -79,9 +79,7 @@ public class AuthenticationService {
         saveUserToken(user, jwtToken);
 
         log.info("User logged in successfully: [{}]", user.getEmail());
-        String message = (user.getStatus() == AccountStatus.AWAITING_CONFIRMATION)
-                ? "Login successful. Please verify your email using the OTP sent to you."
-                : "Login successful.";
+        String message = "Login successful.";
 
         return buildUserResponse(user, jwtToken, message);
     }

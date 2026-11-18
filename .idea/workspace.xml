@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32695414-b694-4719-bbfa-0011fd9d2b6e" name="Changes" comment="Adding registration using Factory and Strategy pattern.">
-      <change afterPath="$PROJECT_DIR$/k8s/01-secrets-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/02-postgres.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/03-kafka.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/04-authentication-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/05-restaurant-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/06-order-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/07-cart-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/08-api-gateway.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/AccountNotReadyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/AccountStateConflictException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/DuplicateEmailException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/ExpiredOtpException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/InvalidOtpException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/UnsupportedRegistrationRoleException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Factory/RegistrationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/Factory/RegistrationFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/AdminRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/AdminRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/CustomerRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/CustomerRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/DriverRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/DriverRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/OwnerRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/src/main/java/za/co/ernest/quickbite/strategy/OwnerRegistration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +35,11 @@
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="OpenAPI" />
-        <option value="Exception" />
         <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
         <option value="Dockerfile" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -75,61 +81,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0000000000034437" />
-      <entry key="S10" value="1.0000072872807186" />
-      <entry key="S30" value="1.1927774127474753" />
-      <entry key="S60" value="3.8813434377133467" />
-      <entry key="M2" value="13.895304951088796" />
-      <entry key="M5" value="36.588175496404986" />
-      <entry key="M10" value="52.28011377300254" />
-      <entry key="M15" value="59.11079938333377" />
-      <entry key="M30" value="66.961798722551" />
-      <entry key="H1" value="71.32441426380583" />
-      <entry key="H2" value="74.30326702531568" />
-      <entry key="H4" value="85.85173960216689" />
-      <entry key="D1" value="206.36746383636338" />
-      <entry key="W1" value="371.8280075060835" />
+      <entry key="MS100" value="6.696915033998473E-7" />
+      <entry key="MS500" value="0.058242372254129" />
+      <entry key="S2" value="0.5453860724822611" />
+      <entry key="S5" value="1.064031704500746" />
+      <entry key="S10" value="1.431507203905401" />
+      <entry key="S30" value="1.9580131469069466" />
+      <entry key="S60" value="2.3093641844734667" />
+      <entry key="M2" value="2.59330965786992" />
+      <entry key="M5" value="2.952986348664036" />
+      <entry key="M10" value="6.198901509429548" />
+      <entry key="M15" value="13.81350966578665" />
+      <entry key="M30" value="41.12088287821623" />
+      <entry key="H1" value="76.05645642520219" />
+      <entry key="H2" value="105.15111100065343" />
+      <entry key="H4" value="132.35013933327323" />
+      <entry key="D1" value="267.82698232071994" />
+      <entry key="W1" value="439.03633720886995" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="1.33E-322" />
-      <entry key="M2" value="1.1439890768240218E-161" />
-      <entry key="M5" value="4.2011554461015756E-65" />
-      <entry key="M10" value="6.481639610000064E-33" />
-      <entry key="M15" value="3.4770154206673366E-22" />
-      <entry key="M30" value="1.9264842407265448E-11" />
-      <entry key="H1" value="6.235039773053962E-6" />
-      <entry key="H2" value="0.005464328940229969" />
-      <entry key="H4" value="0.18807185499804568" />
-      <entry key="D1" value="3.9340369806618645" />
-      <entry key="W1" value="54.671214656853856" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000000000000067" />
+      <entry key="S2" value="1.0005090164847856" />
+      <entry key="S5" value="1.0481608995903677" />
+      <entry key="S10" value="1.219913363478535" />
+      <entry key="S30" value="1.6968801906018898" />
+      <entry key="S60" value="2.183754567828034" />
+      <entry key="M2" value="2.7682270993348816" />
+      <entry key="M5" value="3.398608361174036" />
+      <entry key="M10" value="3.8633809682816085" />
+      <entry key="M15" value="4.304876894120534" />
+      <entry key="M30" value="5.341032325139414" />
+      <entry key="H1" value="6.355360039139622" />
+      <entry key="H2" value="7.0817324161233435" />
+      <entry key="H4" value="7.66811690094832" />
+      <entry key="D1" value="11.733029547766677" />
+      <entry key="W1" value="62.42713303202761" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9726549474122855" />
-      <entry key="MS500" value="0.9944701686732144" />
-      <entry key="S2" value="0.9986146661010289" />
-      <entry key="S5" value="0.9994456359750248" />
-      <entry key="S10" value="0.9997297751748021" />
-      <entry key="S30" value="1.1916005028942023" />
-      <entry key="S60" value="3.8756576976222825" />
-      <entry key="M2" value="13.886074854648214" />
-      <entry key="M5" value="36.58056515901415" />
-      <entry key="M10" value="52.27524599370862" />
-      <entry key="M15" value="59.10727371831833" />
-      <entry key="M30" value="66.95988264835817" />
-      <entry key="H1" value="71.3234214791136" />
-      <entry key="H2" value="74.30821494632741" />
-      <entry key="H4" value="86.03945610671799" />
-      <entry key="D1" value="210.30113032856957" />
-      <entry key="W1" value="426.4989379484768" />
+      <entry key="MS100" value="1.1791385167067668E-4" />
+      <entry key="MS500" value="0.18142868182348382" />
+      <entry key="S2" value="1.0366974451081858" />
+      <entry key="S5" value="1.8026348469968794" />
+      <entry key="S10" value="2.4383290893981107" />
+      <entry key="S30" value="3.51615607074978" />
+      <entry key="S60" value="4.380094205442103" />
+      <entry key="M2" value="5.279844127864885" />
+      <entry key="M5" value="6.307934422053841" />
+      <entry key="M10" value="10.036006848708631" />
+      <entry key="M15" value="18.098363144261445" />
+      <entry key="M30" value="46.4491724063568" />
+      <entry key="H1" value="82.40412546081797" />
+      <entry key="H2" value="112.22851832720512" />
+      <entry key="H4" value="140.0158703988913" />
+      <entry key="D1" value="279.55928773913047" />
+      <entry key="W1" value="501.463134736448" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
