@@ -1,21 +1,31 @@
-name: User Service CI
+name: Authentication Service CI
 
 on:
   push:
     branches:
-      - main
+      - master
+    paths:
+      - 'authentication-service/**'
+      - '.github/workflows/authentication-service-ci.yml'
 
   pull_request:
     branches:
-      - main
+      - master
+    paths:
+      - 'authentication-service/**'
+      - '.github/workflows/authentication-service-ci.yml'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./authentication-service
+
     services:
       postgres:
-        image: postgres:18
+        image: postgres:17-alpine
         env:
           POSTGRES_DB: quickbite
           POSTGRES_USER: postgres
@@ -38,6 +48,7 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
+          cache-dependency-path: authentication-service/pom.xml
 
       - name: Make Maven wrapper executable
         run: chmod +x mvnw
