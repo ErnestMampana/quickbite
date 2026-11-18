@@ -86,7 +86,11 @@ public class User {
         clearOtp();
     }
 
+
     public void requestPasswordReset(String otp, int expiryMinutes) {
+        if (this.status == AccountStatus.AWAITING_CONFIRMATION) {
+            throw new AccountStateConflictException("Cannot reset password before confirming your email address.");
+        }
         this.status = AccountStatus.AWAITING_PWD_RESET;
         assignOtp(otp, expiryMinutes);
     }
@@ -114,7 +118,7 @@ public class User {
         }
 
         if(this.status == AccountStatus.AWAITING_CONFIRMATION) {
-            throw new AccountNotReadyException("Login blocked: account is not confirmed.");
+            throw new AccountNotReadyException("Login blocked: Your account is not confirmed.");
         }
     }
 

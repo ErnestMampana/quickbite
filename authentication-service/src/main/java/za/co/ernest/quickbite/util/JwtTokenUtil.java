@@ -14,6 +14,7 @@ import java.nio.charset.StandardCharsets;
 import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.Map;
+import java.util.UUID;
 
 @Component
 public class JwtTokenUtil implements TokenGenerator {
@@ -34,6 +35,7 @@ public class JwtTokenUtil implements TokenGenerator {
         Date expirationTime = new Date(generationTime.getTime() + expirationDurationMs);
 
         return Jwts.builder()
+                .id(UUID.randomUUID().toString())
                 .subject(user.getId().toString())
                 .claims(Map.of(
                         "email", user.getEmail(),
