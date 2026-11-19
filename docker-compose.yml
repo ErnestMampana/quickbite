@@ -45,6 +45,26 @@ services:
     networks:
       - quickbite-net
 
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: quickbite-kafka-ui
+    ports:
+      - "8090:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: quickbite-cluster
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+    depends_on:
+      kafka:
+        condition: service_healthy
+    networks:
+      - quickbite-net
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: quickbite-mailpit
+    ports:
+      - "1025:1025" # SMTP port for Spring Boot
+      - "8025:8025" # Web inbox UI (open http://localhost:8025 in your browser)
   # ==========================================
   # MICROSERVICES
   # ==========================================
