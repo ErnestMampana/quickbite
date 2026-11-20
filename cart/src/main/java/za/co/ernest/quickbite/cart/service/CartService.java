@@ -53,7 +53,7 @@ public class CartService {
 
     public OrderResponse checkout(Long customerId) {
         log.info("Received checkout request for client identity context: [{}]", customerId);
-        // 3. Fetch the current cart or throw an exception if empty
+
         ShoppingCart cart = cartStorageCache.get(customerId);
         if (cart == null || cart.getItems().isEmpty()) {
             throw new IllegalStateException("Cannot checkout an empty or non-existent cart for customer: " + customerId);
@@ -75,11 +75,10 @@ public class CartService {
         );
 
         try {
-            // 5. Fire the Feign client network call using the customerId as the path variable
+
             OrderResponse response = orderClient.placeOrder(customerId, orderRequest);
             log.info("Order successfully created.");
 
-            // 6. Evict the user's cart from cache since the transaction is finalized
             clearCartCache(customerId);
 
             return response;
