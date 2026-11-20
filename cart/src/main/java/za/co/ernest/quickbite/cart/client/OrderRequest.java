@@ -10,5 +10,5 @@ public record OrderRequest(
        Long restaurantId,
        BigDecimal totalAmount,
        List<OrderItemRequest> items
-        // or Double, depending on your type
+
 ) {}
