@@ -29,6 +29,8 @@ spec:
               value: cart-service
             - name: ORDER_SERVICE_HOST
               value: order-service
+            - name: PAYMENT_SERVICE_HOST
+              value: payment-service
             - name: APP_SECURITY_JWT_SECRET
               valueFrom:
                 secretKeyRef:

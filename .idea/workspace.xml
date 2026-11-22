@@ -5,7 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32695414-b694-4719-bbfa-0011fd9d2b6e" name="Changes" comment="Updating CI on authentication">
+      <change afterPath="$PROJECT_DIR$/cart-service/src/test/java/za/co/ernest/quickbite/cart/controller/CartControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/12-payment-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/dto/InitializePaymentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/dto/PaymentEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/dto/PaymentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/dto/PaystackInitResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/entity/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/enums/PaymentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/kafka/PaymentEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/repository/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/service/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/za/co/ernest/payment_service/service/PaystackSignatureVerifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/CartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/CartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/client/OrderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/client/OrderClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/client/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/client/OrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/client/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/client/OrderResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/dto/AddToCartRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/dto/AddToCartRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/dto/CartItemResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/dto/CartItemResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/dto/CartResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/dto/CartResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/dto/OrderItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/dto/OrderItemRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/model/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/model/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/model/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/za/co/ernest/quickbite/cart/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/za/co/ernest/quickbite/cart/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/test/java/za/co/ernest/quickbite/cart/CartApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/test/java/za/co/ernest/quickbite/cart/CartApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/08-api-gateway.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/08-api-gateway.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +62,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Enum" />
         <option value="OpenAPI" />
-        <option value="Interface" />
         <option value="Exception" />
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Record" />
         <option value="Class" />
         <option value="Dockerfile" />
@@ -67,61 +110,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.5478712424014809" />
-      <entry key="MS500" value="2.456377613118189" />
-      <entry key="S2" value="2.8638822755292317" />
-      <entry key="S5" value="4.384207771596123" />
-      <entry key="S10" value="9.785205574394787" />
-      <entry key="S30" value="24.408512545744575" />
-      <entry key="S60" value="32.11621468088824" />
-      <entry key="M2" value="37.08193128047299" />
-      <entry key="M5" value="40.55248908980797" />
-      <entry key="M10" value="42.79131366090003" />
-      <entry key="M15" value="45.22525142877394" />
-      <entry key="M30" value="52.19041843837131" />
-      <entry key="H1" value="62.307756109202266" />
-      <entry key="H2" value="73.35644901478638" />
-      <entry key="H4" value="83.16154165410104" />
-      <entry key="D1" value="286.06787384324593" />
-      <entry key="W1" value="823.5329274402853" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0" />
+      <entry key="M2" value="1.0000000235799111" />
+      <entry key="M5" value="1.0065037919810085" />
+      <entry key="M10" value="1.7157569268619" />
+      <entry key="M15" value="4.966439739568852" />
+      <entry key="M30" value="25.613034640524447" />
+      <entry key="H1" value="66.23625150377417" />
+      <entry key="H2" value="110.25924148903793" />
+      <entry key="H4" value="144.2181298142272" />
+      <entry key="D1" value="266.6564725988293" />
+      <entry key="W1" value="912.5117936022459" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="2.7641010882312286E-278" />
-      <entry key="S10" value="1.662558596931617E-139" />
-      <entry key="S30" value="5.498686845655708E-47" />
-      <entry key="S60" value="7.415313105766807E-24" />
-      <entry key="M2" value="2.7231072519764638E-12" />
-      <entry key="M5" value="2.3660607908487777E-5" />
-      <entry key="M10" value="0.004864217091011439" />
-      <entry key="M15" value="0.02870837647928172" />
-      <entry key="M30" value="0.1694354640542579" />
-      <entry key="H1" value="0.41162539294606926" />
-      <entry key="H2" value="0.6415931185758024" />
-      <entry key="H4" value="0.8074677573452304" />
-      <entry key="D1" value="5.128465248360198" />
-      <entry key="W1" value="55.951055827034935" />
+      <entry key="S5" value="1.3651797146829913E-199" />
+      <entry key="S10" value="3.6948338456322927E-100" />
+      <entry key="S30" value="7.175711525228911E-34" />
+      <entry key="S60" value="2.6787518595909565E-17" />
+      <entry key="M2" value="5.175673864690916E-9" />
+      <entry key="M5" value="4.871078522788795E-4" />
+      <entry key="M10" value="0.0235291399760387" />
+      <entry key="M15" value="0.09172289301716023" />
+      <entry key="M30" value="0.3950180029828329" />
+      <entry key="H1" value="0.8681428211008624" />
+      <entry key="H2" value="1.3096118390988085" />
+      <entry key="H4" value="1.6159906320098172" />
+      <entry key="D1" value="3.0741414070339497" />
+      <entry key="W1" value="47.14935050200262" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3806328886713828" />
-      <entry key="MS500" value="2.1314331203725803" />
-      <entry key="S2" value="2.716449982523907" />
-      <entry key="S5" value="4.31517023332103" />
-      <entry key="S10" value="9.742384988001485" />
-      <entry key="S30" value="24.384883956296544" />
-      <entry key="S60" value="32.101543854213254" />
-      <entry key="M2" value="37.07362637515258" />
-      <entry key="M5" value="40.54891482936714" />
-      <entry key="M10" value="42.79430677592741" />
-      <entry key="M15" value="45.2526454763708" />
-      <entry key="M30" value="52.359042466672356" />
-      <entry key="H1" value="62.7188465723495" />
-      <entry key="H2" value="73.99771113658326" />
-      <entry key="H4" value="83.96881642822774" />
-      <entry key="D1" value="291.19597862106303" />
-      <entry key="W1" value="879.4836325466864" />
+      <entry key="MS100" value="0.9330329915368074" />
+      <entry key="MS500" value="0.9862327044933592" />
+      <entry key="S2" value="0.9965402628278678" />
+      <entry key="S5" value="0.9986146661010289" />
+      <entry key="S10" value="0.9993070929904525" />
+      <entry key="S30" value="0.9997689776295918" />
+      <entry key="S60" value="0.9998844821426083" />
+      <entry key="M2" value="0.9999422681070395" />
+      <entry key="M5" value="1.0069657519423258" />
+      <entry key="M10" value="1.7392143235988797" />
+      <entry key="M15" value="5.057953399196949" />
+      <entry key="M30" value="26.007350252068356" />
+      <entry key="H1" value="67.10319994775307" />
+      <entry key="H2" value="111.56752693609225" />
+      <entry key="H4" value="145.83303268520282" />
+      <entry key="D1" value="269.730234632413" />
+      <entry key="W1" value="959.6608132817926" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -136,51 +179,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AuthenticationServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.CartApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.QuickbiteApplication.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthenticationIntegrationTest.confirmEmail_ShouldReturn400BadRequest_WhenOtpIsInvalid.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthenticationIntegrationTest.passwordResetAndRefreshOtpFlow_ShouldUpdatePasswordAndAllowLogin.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthenticationIntegrationTest.register_ShouldReturn409Conflict_WhenEmailAlreadyExists.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.CartApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.OrderAndOperationsServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.QuickbiteApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.RestaurantServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev__ernest&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/a909097/Dev/quickbite/api-gateway&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AuthenticationServiceApplication.executor": "Run",
+    "Application.CartApplication.executor": "Run",
+    "Application.PaymentServiceApplication.executor": "Run",
+    "Application.QuickbiteApplication.executor": "Run",
+    "JUnit.AuthenticationIntegrationTest.confirmEmail_ShouldReturn400BadRequest_WhenOtpIsInvalid.executor": "Run",
+    "JUnit.AuthenticationIntegrationTest.passwordResetAndRefreshOtpFlow_ShouldUpdatePasswordAndAllowLogin.executor": "Run",
+    "JUnit.AuthenticationIntegrationTest.register_ShouldReturn409Conflict_WhenEmailAlreadyExists.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.CartApplication.executor": "Run",
+    "Spring Boot.OrderAndOperationsServiceApplication.executor": "Run",
+    "Spring Boot.QuickbiteApplication.executor": "Run",
+    "Spring Boot.RestaurantServiceApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "dev__ernest",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/a909097/Dev/quickbite/api-gateway",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "to.speed.mode.migration.done": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="za.co.ernest.quickbite.UserService.Repository" />
@@ -205,7 +249,20 @@
       <recent name="za.co.ernest.quickbite.AuthenticationService.DTO" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AuthenticationIntegrationTest.register_ShouldReturn409Conflict_WhenEmailAlreadyExists">
+  <component name="RunManager" selected="Application.PaymentServiceApplication">
+    <configuration name="PaymentServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="za.co.ernest.payment_service.PaymentServiceApplication" />
+      <module name="payment-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="za.co.ernest.payment_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthenticationIntegrationTest.confirmEmail_ShouldReturn400BadRequest_WhenOtpIsInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="quickbite" />
       <extension name="coverage">
@@ -254,20 +311,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="api-gateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="za.co.ernest.quickbite.api_gateway.ApiGatewayApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="za.co.ernest.quickbite.api_gateway.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RestaurantServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="restaurant-service" />
@@ -284,11 +327,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PaymentServiceApplication" />
         <item itemvalue="JUnit.AuthenticationIntegrationTest.register_ShouldReturn409Conflict_WhenEmailAlreadyExists" />
         <item itemvalue="JUnit.AuthenticationIntegrationTest.confirmEmail_ShouldReturn400BadRequest_WhenOtpIsInvalid" />
         <item itemvalue="JUnit.AuthenticationIntegrationTest.passwordResetAndRefreshOtpFlow_ShouldUpdatePasswordAndAllowLogin" />
         <item itemvalue="Spring Boot.RestaurantServiceApplication" />
-        <item itemvalue="Spring Boot.ApiGatewayApplication" />
       </list>
     </recent_temporary>
   </component>

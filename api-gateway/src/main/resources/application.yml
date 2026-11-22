@@ -46,6 +46,11 @@ spring:
               filters:
                 - AuthenticationFilter
 
+            - id: payment-service
+              uri: http://${PAYMENT_SERVICE_HOST:localhost}:8086
+              predicates:
+                - Path=/api/v1/payments/**
+
             - id: auth-service-docs
               uri: http://${AUTH_SERVICE_HOST:localhost}:8081
               predicates:

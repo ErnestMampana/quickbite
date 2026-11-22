@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-service
+  template:
+    metadata:
+      labels:
+        app: payment-service
+    spec:
+      containers:
+        - name: payment-service
+          image: quickbite/payment-service:1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8086
+          env:
+            - name: SERVER_PORT
+              value: "8086"
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/quickbite
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: quickbite-secrets
+                  key: POSTGRES_USER
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: quickbite-secrets
+                  key: POSTGRES_PASSWORD
+            - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
+              value: kafka:9092
+            - name: PAYSTACK_SECRET_KEY
+              value: sk_test_24b26ed72520d51de2d1d3ff845cbabc5d483aec
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-service
+spec:
+  type: ClusterIP
+  selector:
+    app: payment-service
+  ports:
+    - port: 8086
+      targetPort: 8086

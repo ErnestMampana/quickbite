@@ -3,10 +3,11 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/api-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/authentication-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cart-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/notification-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-and-operations-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/payment-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restaurant-service/src/main/java" charset="UTF-8" />
   </component>
 </project>
