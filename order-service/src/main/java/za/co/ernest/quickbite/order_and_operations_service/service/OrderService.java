@@ -66,35 +66,6 @@ public class OrderService {
 
         return mapToResponse(savedOrder);
     }
-//    @Transactional
-//    public OrderResponse placeOrder(Long authenticatedCustomerId, CreateOrderRequest request) {
-//        log.info("Processing checkout for customer ID [{}]", authenticatedCustomerId);
-//
-//        Boolean isAvailable = restaurantClient.isRestaurantActive(request.restaurantId());
-//
-//        if (Boolean.FALSE.equals(isAvailable) || isAvailable == null) {
-//            throw new za.co.ernest.quickbite.order_and_operations_service.exception.UnauthorizedOwnershipException(
-//                    "Order Denied: The target establishment is currently closed or suspended.");
-//        }
-//
-//        Order order = Order.builder()
-//                .customerId(authenticatedCustomerId)
-//                .restaurantId(request.restaurantId())
-//                .totalAmount(request.totalAmount())
-//                .build();
-//
-//        Order savedOrder = orderRepository.save(order);
-//
-//        orderEventProducer.publishOrderPlaced(
-//                savedOrder.getId(),
-//                savedOrder.getCustomerId(),
-//                savedOrder.getRestaurantId(),
-//                savedOrder.getTotalAmount(),
-//                savedOrder.getLifecycleState().getStatusName()
-//        );
-//
-//        return mapToResponse(savedOrder);
-//    }
 
 
     @Transactional
