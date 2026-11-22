@@ -1,0 +1,36 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/quickbite_payments}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:12345}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
+
+paystack:
+  api:
+    base-url: https://api.paystack.co
+    secret-key: ${PAYSTACK_SECRET_KEY:sk_test_24b26ed72520d51de2d1d3ff845cbabc5d483aec}
+    callback-url: ${PAYSTACK_CALLBACK_URL:http://localhost:3000/payment/callback}
+
+app:
+  kafka:
+    topics:
+      payment-events: ${PAYMENT_EVENTS_TOPIC:payment-events}

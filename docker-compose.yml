@@ -143,6 +143,27 @@ services:
     networks:
       - quickbite-net
 
+  payment-service:
+    build:
+      context: ./payment-service
+    container_name: quickbite-payment
+    ports:
+      - "8086:8086"
+    environment:
+      SERVER_PORT: 8086
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/quickbite_payments
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 12345
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      APP_SERVICES_RESTAURANT_URL: http://restaurant-service:8086
+    depends_on:
+      postgres:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    networks:
+      - quickbite-net
+
   api-gateway:
     build:
       context: ./api-gateway
@@ -156,6 +177,7 @@ services:
       RESTAURANT_SERVICE_HOST: restaurant-service
       CART_SERVICE_HOST: cart-service
       ORDER_SERVICE_HOST: order-service
+      PAYMENT_SERVICE_HOST: payment-service
     depends_on:
       - authentication-service
       - restaurant-service
