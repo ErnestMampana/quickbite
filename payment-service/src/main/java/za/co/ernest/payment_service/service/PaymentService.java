@@ -1,5 +1,6 @@
 package za.co.ernest.payment_service.service;
 
+import lombok.RequiredArgsConstructor;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +28,7 @@ import java.util.UUID;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class PaymentService {
 
     private final PaymentRepository paymentRepository;
@@ -34,29 +36,10 @@ public class PaymentService {
     private final PaystackSignatureVerifier signatureVerifier;
     private final ObjectMapper objectMapper;
     private final RestClient restClient;
-    private final String callbackUrl;
 
-    public PaymentService(
-            PaymentRepository paymentRepository,
-            PaymentEventPublisher eventPublisher,
-            PaystackSignatureVerifier signatureVerifier,
-            ObjectMapper objectMapper,
-            @Value("${paystack.api.base-url}") String baseUrl,
-            @Value("${paystack.api.secret-key}") String secretKey,
-            @Value("${paystack.api.callback-url}") String callbackUrl) {
-        this.paymentRepository = paymentRepository;
-        this.eventPublisher = eventPublisher;
-        this.signatureVerifier = signatureVerifier;
-        this.objectMapper = objectMapper;
-        this.callbackUrl = callbackUrl;
-        this.restClient = RestClient.builder()
-                .baseUrl(baseUrl)
-                .defaultHeader(HttpHeaders.AUTHORIZATION, "Bearer " + secretKey)
-                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .defaultHeader(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
-                .defaultHeader(HttpHeaders.USER_AGENT, "QuickBite-PaymentService/1.0")
-                .build();
-    }
+    @Value("${paystack.api.callback-url}")
+    private String callbackUrl;
+
 
     @Transactional
     public PaymentResponse initializePayment(InitializePaymentRequest request) {
@@ -126,7 +109,6 @@ public class PaymentService {
             Payment payment = paymentRepository.findByReference(reference)
                     .orElseThrow(() -> new IllegalArgumentException("Unknown payment reference: " + reference));
 
-            // Idempotency guard: ignore duplicate webhooks if already finalized
             if (payment.getStatus() == PaymentStatus.SUCCESS) {
                 log.info("Ignoring duplicate webhook for already completed payment [{}]", reference);
                 return;
@@ -172,7 +154,6 @@ public class PaymentService {
         Payment payment = paymentRepository.findByReference(reference)
                 .orElseThrow(() -> new IllegalArgumentException("Unknown payment reference: " + reference));
 
-        // Idempotency guard: if already SUCCESS, return immediately without re-publishing Kafka event
         if (payment.getStatus() == PaymentStatus.SUCCESS) {
             return toResponse(payment);
         }
@@ -185,7 +166,8 @@ public class PaymentService {
         try {
             JsonNode root = objectMapper.readTree(rawResponse);
             JsonNode data = root.path("data");
-            String gatewayStatus = data.path("status").asText(); // "success", "failed", "abandoned"
+            log.info("Payment data :: [{}]", data);
+            String gatewayStatus = data.path("status").asText();
             String channel = data.path("channel").asText("unknown");
 
             if ("success".equalsIgnoreCase(gatewayStatus)) {

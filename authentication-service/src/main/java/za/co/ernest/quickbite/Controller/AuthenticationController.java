@@ -52,4 +52,9 @@ public class AuthenticationController {
     public ResponseEntity<String> refreshOtp(@Valid @RequestBody PasswordResetRequest request) {
         return ResponseEntity.ok(authenticationService.refreshOtp(request.email()));
     }
+
+    @GetMapping("/get-user/{userId}")
+    public ResponseEntity<String> getUserName(@PathVariable int userId) {
+        return ResponseEntity.ok(authenticationService.getUserName(userId));
+    }
 }

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(
         name = "restaurant-service",
         contextId = "restaurantServiceClient",
-        url = "${app.services.restaurant-url:http://localhost:8585}" // Defaults cleanly to port 8081 locally
+        url = "${app.services.restaurant-url:http://localhost:8585}"
 )
 public interface RestaurantClient {
 
-    @GetMapping("/api/v1/restaurant/validate/{id}")
+    @GetMapping("/api/v1/restaurants/validate/{id}")
     Boolean isRestaurantActive(@PathVariable("id") Long id);
 }

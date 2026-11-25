@@ -5,13 +5,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import za.co.ernest.quickbite.order_and_operations_service.client.CustomerClient;
+import za.co.ernest.quickbite.order_and_operations_service.client.PaymentClient;
+import za.co.ernest.quickbite.order_and_operations_service.dto.PaymentRequest;
+import za.co.ernest.quickbite.order_and_operations_service.dto.PaymentResponse;
 import za.co.ernest.quickbite.order_and_operations_service.entity.OrderItem;
 import za.co.ernest.quickbite.order_and_operations_service.repository.OrderRepository;
 import za.co.ernest.quickbite.order_and_operations_service.client.RestaurantClient;
 import za.co.ernest.quickbite.order_and_operations_service.dto.CreateOrderRequest;
 import za.co.ernest.quickbite.order_and_operations_service.dto.OrderResponse;
 import za.co.ernest.quickbite.order_and_operations_service.entity.Order;
-import za.co.ernest.quickbite.order_and_operations_service.event.OrderEventProducer;
+import za.co.ernest.quickbite.order_and_operations_service.event.producer.OrderEventProducer;
 
 import java.util.List;
 
@@ -24,6 +28,8 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final RestaurantClient restaurantClient;
     private final OrderEventProducer orderEventProducer;
+    private final PaymentClient paymentClient;
+    private final CustomerClient customerClient;
 
 
 
@@ -56,6 +62,7 @@ public class OrderService {
 
         Order savedOrder = orderRepository.save(order);
 
+        log.info("about to create order [{}]", savedOrder);
         orderEventProducer.publishOrderPlaced(
                 savedOrder.getId(),
                 savedOrder.getCustomerId(),
@@ -83,9 +90,13 @@ public class OrderService {
         Order order = fetchOrderOrThrow(orderId);
         String previousStatus = order.getLifecycleState().getStatusName();
 
+        if ("PAID".equals(previousStatus)) {
+            log.info("Order ID [{}] is already marked as PAID. Skipping duplicate event.", orderId);
+            return mapToResponse(order);
+        }
+
         order.processPaymentSuccess();
         Order savedOrder = orderRepository.save(order);
-
 
         orderEventProducer.publishStatusChange(
                 savedOrder.getId(),
@@ -114,6 +125,21 @@ public class OrderService {
         );
 
         return mapToResponse(savedOrder);
+    }
+
+    public PaymentResponse initiateOrderPayment(Long orderId) {
+        Order order = fetchOrderOrThrow(orderId);
+
+        log.info("Initiating payment via payment-service for order ID [{}]", orderId);
+        PaymentRequest request = PaymentRequest.builder()
+                .orderId(order.getId())
+                .email(customerClient.getUserEmail(Math.toIntExact(order.getCustomerId())))
+                .amountZar(order.getTotalAmount())
+                .build();
+
+        log.info("payment request [{}]", request.toString());
+
+        return paymentClient.initializePayment(request);
     }
 
 

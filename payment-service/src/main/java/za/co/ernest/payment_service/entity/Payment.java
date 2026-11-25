@@ -44,7 +44,7 @@ public class Payment {
     private PaymentStatus status = PaymentStatus.PENDING;
 
     @Column(length = 50)
-    private String paymentChannel; // e.g., "eft", "card"
+    private String paymentChannel;
 
     @Column(length = 500)
     private String authorizationUrl;

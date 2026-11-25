@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import za.co.ernest.quickbite.order_and_operations_service.dto.CreateOrderRequest;
 import za.co.ernest.quickbite.order_and_operations_service.dto.OrderResponse;
+import za.co.ernest.quickbite.order_and_operations_service.dto.PaymentResponse;
 import za.co.ernest.quickbite.order_and_operations_service.service.OrderService;
 
 @RestController
@@ -26,8 +27,8 @@ public class OrderController {
     }
 
     @PatchMapping("/{id}/pay")
-    public ResponseEntity<OrderResponse> payOrder(@PathVariable Long id) {
-        return ResponseEntity.ok(orderService.handlePaymentSuccess(id));
+    public ResponseEntity<PaymentResponse> payOrder(@PathVariable Long id) {
+        return ResponseEntity.ok(orderService.initiateOrderPayment(id));
     }
 
     @PatchMapping("/{id}/accept")

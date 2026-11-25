@@ -34,8 +34,14 @@ public class PaymentController {
         return ResponseEntity.ok(paymentService.getPaymentByOrderId(orderId));
     }
 
-    @GetMapping("/verify/{reference}")
-    public ResponseEntity<PaymentResponse> verifyPayment(@PathVariable String reference) {
+//    @GetMapping("/verify/{reference}")
+//    public ResponseEntity<PaymentResponse> verifyPayment(@PathVariable String reference) {
+//        return ResponseEntity.ok(paymentService.verifyPayment(reference));
+//    }
+
+
+    @GetMapping("/verify")
+    public ResponseEntity<PaymentResponse> autoVerifyPayment(@RequestParam("reference") String reference) {
         return ResponseEntity.ok(paymentService.verifyPayment(reference));
     }
 

@@ -188,4 +188,11 @@ public class AuthenticationService {
                 Instant.now().toString()
         );
     }
+
+    public String getUserName(int userId) {
+        User user =  userAccountRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User account not found" ));
+
+        return user.getEmail();
+    }
 }
