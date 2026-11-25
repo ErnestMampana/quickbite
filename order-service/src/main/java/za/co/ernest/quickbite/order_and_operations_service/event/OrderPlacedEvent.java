@@ -1,4 +1,4 @@
-package za.co.ernest.quickbite.order_and_operations_service.dto;
+package za.co.ernest.quickbite.order_and_operations_service.event;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

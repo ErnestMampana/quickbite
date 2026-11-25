@@ -1,10 +1,10 @@
-package za.co.ernest.quickbite.order_and_operations_service.event;
+package za.co.ernest.quickbite.order_and_operations_service.event.producer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-import za.co.ernest.quickbite.order_and_operations_service.dto.OrderPlacedEvent;
+import za.co.ernest.quickbite.order_and_operations_service.event.OrderPlacedEvent;
 import za.co.ernest.quickbite.order_and_operations_service.dto.OrderStatusChangedEvent;
 
 import java.math.BigDecimal;

@@ -28,7 +28,7 @@ paystack:
   api:
     base-url: https://api.paystack.co
     secret-key: ${PAYSTACK_SECRET_KEY:sk_test_24b26ed72520d51de2d1d3ff845cbabc5d483aec}
-    callback-url: ${PAYSTACK_CALLBACK_URL:http://localhost:3000/payment/callback}
+    callback-url: ${PAYSTACK_CALLBACK_URL:http://localhost:8080/api/v1/payments/verify}
 
 app:
   kafka:
