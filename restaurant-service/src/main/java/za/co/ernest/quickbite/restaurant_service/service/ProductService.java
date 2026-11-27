@@ -27,40 +27,6 @@ public class ProductService {
     private final RestaurantRepository restaurantRepository;
     private final FileStorageService fileStorageService;
 
-
-//    @Transactional
-//    public MenuItemResponse uploadProduct(Long restaurantId, Long authenticatedOwnerId, CreateMenuItemRequest request) {
-//        Restaurant restaurant = restaurantRepository.findById(restaurantId)
-//                .orElseThrow(() -> new ResourceNotFoundException("Restaurant not found with ID: " + restaurantId));
-//
-//        if (!restaurant.isOwnedBy(authenticatedOwnerId)) {
-//            throw new UnauthorizedOwnershipException("Access Denied: Conflicting tenant ownership identifiers.");
-//        }
-//
-//        ProductCategory targetCategory = ProductCategory.valueOf(request.category().toUpperCase());
-//
-//        targetCategory.validateConstraints(request);
-//
-//        MenuItem menuItem = MenuItem.builder()
-//                .name(request.name())
-//                .description(request.description())
-//                .price(request.price())
-//                .category(targetCategory)
-//                .build();
-//
-//        restaurant.addMenuItem(menuItem);
-//        restaurantRepository.save(restaurant);
-//
-//        return new MenuItemResponse(
-//                menuItem.getId(),
-//                menuItem.getName(),
-//                menuItem.getDescription(),
-//                menuItem.getPrice(),
-//                menuItem.isAvailable(),
-//                menuItem.getCategory().name()
-//        );
-//    }
-
     @Transactional
     public MenuItemResponse uploadProduct(
             Long restaurantId,
