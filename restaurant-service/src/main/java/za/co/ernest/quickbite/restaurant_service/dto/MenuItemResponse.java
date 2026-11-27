@@ -1,6 +1,7 @@
 package za.co.ernest.quickbite.restaurant_service.dto;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public record MenuItemResponse(
         Long id,
@@ -8,5 +9,6 @@ public record MenuItemResponse(
         String description,
         BigDecimal price,
         boolean isAvailable,
-        String category
+        String category,
+        List<String> imageUrls
 ) {}

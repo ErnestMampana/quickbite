@@ -36,13 +36,13 @@ public class OrderController {
         return ResponseEntity.ok(orderService.handleKitchenAcceptance(id));
     }
 
-//    @PatchMapping("/{id}/dispatch")
-//    public ResponseEntity<OrderResponse> dispatchOrder(@PathVariable Long id) {
-//        return ResponseEntity.ok(orderService.handleDriverDispatch(id));
-//    }
-//
-//    @PatchMapping("/{id}/complete")
-//    public ResponseEntity<OrderResponse> completeOrder(@PathVariable Long id) {
-//        return ResponseEntity.ok(orderService.handleOrderDeliveryComplete(id));
-//    }
+    @PatchMapping("/{id}/dispatch")
+    public ResponseEntity<OrderResponse> dispatchOrder(@PathVariable Long id) {
+        return ResponseEntity.ok(orderService.handleDriverDispatch(id));
+    }
+
+    @PatchMapping("/{id}/complete")
+    public ResponseEntity<OrderResponse> completeOrder(@PathVariable Long id) {
+        return ResponseEntity.ok(orderService.handleOrderDeliveryComplete(id));
+    }
 }

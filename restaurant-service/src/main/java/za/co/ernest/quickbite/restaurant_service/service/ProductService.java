@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import za.co.ernest.quickbite.restaurant_service.dto.UpdateProductRequest;
 import za.co.ernest.quickbite.restaurant_service.exception.ResourceNotFoundException;
 import za.co.ernest.quickbite.restaurant_service.dto.CreateMenuItemRequest;
@@ -13,6 +14,9 @@ import za.co.ernest.quickbite.restaurant_service.entity.Restaurant;
 import za.co.ernest.quickbite.restaurant_service.enums.ProductCategory;
 import za.co.ernest.quickbite.restaurant_service.exception.UnauthorizedOwnershipException;
 import za.co.ernest.quickbite.restaurant_service.repository.RestaurantRepository;
+import za.co.ernest.quickbite.restaurant_service.storage.FileStorageService;
+
+import java.util.List;
 
 @Service
 @Slf4j
@@ -21,10 +25,15 @@ public class ProductService {
     //private final DriverDetailsRepository driverDetailsRepository;
 
     private final RestaurantRepository restaurantRepository;
-
+    private final FileStorageService fileStorageService;
 
     @Transactional
-    public MenuItemResponse uploadProduct(Long restaurantId, Long authenticatedOwnerId, CreateMenuItemRequest request) {
+    public MenuItemResponse uploadProduct(
+            Long restaurantId,
+            Long authenticatedOwnerId,
+            CreateMenuItemRequest request,
+            List<MultipartFile> images) {
+
         Restaurant restaurant = restaurantRepository.findById(restaurantId)
                 .orElseThrow(() -> new ResourceNotFoundException("Restaurant not found with ID: " + restaurantId));
 
@@ -33,28 +42,34 @@ public class ProductService {
         }
 
         ProductCategory targetCategory = ProductCategory.valueOf(request.category().toUpperCase());
-
         targetCategory.validateConstraints(request);
 
-        MenuItem menuItem = MenuItem.builder()
-                .name(request.name())
-                .description(request.description())
-                .price(request.price())
-                .category(targetCategory)
-                .build();
+        if (images == null || images.isEmpty() || images.size() > 5) {
+            throw new IllegalArgumentException("A menu item must include between 1 and 5 images.");
+        }
 
-        restaurant.addMenuItem(menuItem);
-        restaurantRepository.save(restaurant);
+        List<String> uploadedImageUrls = fileStorageService.uploadFiles(images, "menu-items");
 
-        return new MenuItemResponse(
-                menuItem.getId(),
-                menuItem.getName(),
-                menuItem.getDescription(),
-                menuItem.getPrice(),
-                menuItem.isAvailable(),
-                menuItem.getCategory().name()
-        );
+        try {
+            MenuItem menuItem = MenuItem.builder()
+                    .name(request.name())
+                    .description(request.description())
+                    .price(request.price())
+                    .category(targetCategory)
+                    .imageUrls(uploadedImageUrls)
+                    .build();
+
+            restaurant.addMenuItem(menuItem);
+            restaurantRepository.save(restaurant);
+
+            return mapToResponse(menuItem);
+        } catch (Exception ex) {
+            // Rollback uploaded files so orphaned images aren't left on disk/S3 if DB save fails
+            uploadedImageUrls.forEach(fileStorageService::deleteFile);
+            throw ex;
+        }
     }
+
 
     @Transactional
     public MenuItemResponse updateProductDetails(Long restaurantId, Long itemId, Long authenticatedOwnerId, UpdateProductRequest request) {
@@ -105,7 +120,8 @@ public class ProductService {
                 menuItem.getDescription(),
                 menuItem.getPrice(),
                 menuItem.isAvailable(),
-                menuItem.getCategory().name());
+                menuItem.getCategory().name(),
+                menuItem.getImageUrls());
     }
 
     private Restaurant validateOwnership(Long restaurantId, Long authenticatedOwnerId) {
