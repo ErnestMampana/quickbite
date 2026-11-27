@@ -35,6 +35,8 @@ spec:
                   key: POSTGRES_PASSWORD
             - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
               value: kafka:9092
+            - name: APP_STORAGE_LOCAL_DIR
+              value: /tmp/uploads
 ---
 apiVersion: v1
 kind: Service

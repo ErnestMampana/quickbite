@@ -5,9 +5,13 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import za.co.ernest.quickbite.restaurant_service.enums.ProductCategory;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "menu_items")
@@ -31,7 +35,7 @@ public class MenuItem {
     @Column(nullable = false)
     private boolean isAvailable;
 
-    @Enumerated(EnumType.STRING) // Persisted cleanly as text
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, name = "category")
     private ProductCategory category;
 
@@ -39,13 +43,19 @@ public class MenuItem {
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "images",columnDefinition = "jsonb", nullable = false)
+    private List<String> imageUrls;
+
+
     @Builder
-    public MenuItem(String name, String description, BigDecimal price, ProductCategory category) {
+    public MenuItem(String name, String description, BigDecimal price, ProductCategory category ,List<String> imageUrls) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.category = category;
         this.isAvailable = true;
+        this.imageUrls = imageUrls;
     }
 
     public void assignToRestaurant(Restaurant restaurant) {

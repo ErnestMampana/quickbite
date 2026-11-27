@@ -142,6 +142,49 @@ public class OrderService {
         return paymentClient.initializePayment(request);
     }
 
+    @Transactional
+    public OrderResponse handleDriverDispatch(Long orderId) {
+        Order order = fetchOrderOrThrow(orderId);
+        String previousStatus = order.getLifecycleState().getStatusName();
+
+        order.dispatchForDelivery();
+        Order savedOrder = orderRepository.save(order);
+
+        orderEventProducer.publishStatusChange(
+                savedOrder.getId(),
+                previousStatus,
+                savedOrder.getLifecycleState().getStatusName(),
+                savedOrder.getCustomerId()
+        );
+
+        log.info("Order ID [{}] dispatched to driver: [{}] -> [{}]",
+                savedOrder.getId(), previousStatus, savedOrder.getLifecycleState().getStatusName());
+
+        return mapToResponse(savedOrder);
+    }
+
+    @Transactional
+    public OrderResponse handleOrderDeliveryComplete(Long orderId) {
+        Order order = fetchOrderOrThrow(orderId);
+        String previousStatus = order.getLifecycleState().getStatusName();
+
+        order.completeOrderDelivery();
+        Order savedOrder = orderRepository.save(order);
+
+        orderEventProducer.publishStatusChange(
+                savedOrder.getId(),
+                previousStatus,
+                savedOrder.getLifecycleState().getStatusName(),
+                savedOrder.getCustomerId()
+        );
+
+        log.info("Order ID [{}] delivery completed: [{}] -> [{}]",
+                savedOrder.getId(), previousStatus, savedOrder.getLifecycleState().getStatusName());
+
+        return mapToResponse(savedOrder);
+    }
+
+
 
 
     private Order fetchOrderOrThrow(Long orderId) {
